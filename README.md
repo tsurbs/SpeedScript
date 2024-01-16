@@ -10,6 +10,8 @@ curl --location 'https://www.strava.com/api/v3/athlete/activities' \
 
 SpeedScript Specification
 By Frank Sacco, Lawrence Feng, and Theo Urban
+https://esolangs.org/wiki/SpeedScript
+
 
 Speedscript is a language based on brainfuck which allows you to write code by performing an activity on Strava, an exercise social media site.  The motivation for this esolang is that doing so would allow users to optimize the time they dedicate to self-care, obtaining an optimal 0% self-care time usage by allowing the time taken by working out to be used for real work like writing code.  
 The language is effectively just a brainfuck dialect, but the integration with Strava provides an interesting layer of complexity.  To write in this language, you simply perform a Strava activity (eg. running) which has some pace associated with each lap, recorded by performing an action at write-time like pressing a button on a gps watch.  Then, all you need to do is run a compilation python script which accesses your most recent Strava activity via the Strava API and overwrites your description with the brainfuck code and output of that brainfuck code.  This means that the only setup required is to store your user refresh token and api key as an environment variable before running the code.  This could be improved in a future with such technology as a server which just does the whole thing.  
