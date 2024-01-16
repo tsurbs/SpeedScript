@@ -75,4 +75,4 @@ data = {
     "id":id,
     "data":update_json
 }
-# update_response = requests.put('https://www.strava.com/api/v3/activities/'+str(id), data=update_json, headers=headers)
+update_response = requests.put('https://www.strava.com/api/v3/activities/'+str(id), data=update_json, headers=headers)
