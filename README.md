@@ -8,7 +8,7 @@ curl -X POST https://www.strava.com/oauth/token \
 curl --location 'https://www.strava.com/api/v3/athlete/activities' \
  --header 'Authorization: Bearer $BEARER_ACCESS'
 
- SpeedScript Specification
+SpeedScript Specification
 By Frank Sacco, Lawrence Feng, and Theo Urban
 
 Speedscript is a language based on brainfuck which allows you to write code by performing an activity on Strava, an exercise social media site.  The motivation for this esolang is that doing so would allow users to optimize the time they dedicate to self-care, obtaining an optimal 0% self-care time usage by allowing the time taken by working out to be used for real work like writing code.  
@@ -90,6 +90,7 @@ Lap 68: 5:30 // 20.625
 Lap 69: 5:30 // 20.625
 Lap 70: 6:30 // 22.5-24.375
 Lap 71: 7:30 // 26.25-28.125
+
 Lap 0: 8:00 // 28.125-30
 Lap 1: 8:30 // 30-31.875
 Lap 2: 5:30 // 20.625

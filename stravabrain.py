@@ -4,6 +4,7 @@ import json
 
 fakestdout = []
 
+#Stolen from stackoverflow and then modified mildly
 from sys import*;import io,os;V=argv;V.extend([""]*2);stdin=io.StringIO(V[2])if V[2]else stdin
 r=os.path.exists(V[1]);f=r and open(V[1]);b=f.read()if r else V[1];r and f.close()
 def I(b,t,p):
@@ -38,7 +39,7 @@ most_recent_activity = activity_response.json()[0]
 
 id = most_recent_activity['id']
 
-# to get laps of most recent activity, replace "10273930982" with '+id+'
+# get most recent activity laps
 laps_response = requests.get('https://www.strava.com/api/v3/activities/'+str(id)+'/laps', headers=headers)
 average_lap_speeds = [26.8224/(lap['average_speed']+.001) for lap in laps_response.json()]
 
@@ -68,8 +69,10 @@ update_json = {"description": "\n"+brainfuck_code+" || "+evaluated+""}
 headers2 = {
     'Authorization': 'Bearer ' + os.getenv('BEARERACCESS', ''),
 }
+print(headers2)
 data = {
+    
     "id":id,
     "data":update_json
 }
-update_response = requests.put('https://www.strava.com/api/v3/activities/'+str(id), data=update_json, headers=headers)
+# update_response = requests.put('https://www.strava.com/api/v3/activities/'+str(id), data=update_json, headers=headers)
